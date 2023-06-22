@@ -71,8 +71,8 @@ Ich danke vor allem dem Autor "hobbyelektroniker" für seinen hervorragenden Kur
 - Web-Server
 - Erzeugung von Web-Seiten
 - ESP32 Speicher und Garbage Collector
-Dieser Kurs hat mein Projekt möglich gemacht!
 
+Dieser Kurs hat mein Projekt möglich gemacht!
 
 Dann danke ich dem Autor "Ozan" für den JavaScript-Code in seinem fiddle. Der Code zeichnet auf HTML5 Canvas und benötigt keine Bibliothek.
 
