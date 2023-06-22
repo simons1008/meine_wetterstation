@@ -1,0 +1,79 @@
+<!-- <script> -->
+<!-- array = []; -->
+<!-- for( let i = 0; i < 144; i++) { -->
+    <!-- array.push(20 + i * 0.3); -->
+    <!-- } -->
+<!-- </script> -->
+
+<canvas id="cvs"> </canvas>
+
+<script>
+const width = 720,
+      height = 360,
+      horizontal_points = 144,
+      vertical_points = 60,
+      horizontal_tics = 24,
+      vertical_tics = 6;
+const horizontal_zoom = width / horizontal_points,
+      vertical_zoom = height / vertical_points,
+      vertical_offset = 20;
+const cvs = document.getElementById("cvs");
+cvs.width = width;
+cvs.height = height;
+const ctx = cvs.getContext("2d");
+
+//fill canvas white
+ctx.fillStyle = "#ffffff";
+ctx.fillRect(0, 0, width, height);
+
+//draw grid
+ctx.strokeStyle = "#C0C0C0";
+ctx.font = '14px serif';
+ctx.fillStyle = "#000";
+ctx.textBaseline = "top";
+ctx.textAlign = "left";
+//vertical lines of grid
+for (let i = 0, j = 0; i <= width; i += width / horizontal_tics, j++) {
+    ctx.lineWidth = (i == width / 2) ? 3 : 1;
+    ctx.beginPath();
+    ctx.moveTo(i, 0);
+    ctx.lineTo(i, height);
+    ctx.stroke();
+    ctx.textAlign = i == width ? "right" : "left";
+    ctx.fillText(-24 + j, i, height / vertical_tics * 5);
+}
+// horizontal lines of grid
+for (let i = 0, j = 0; i <= height; i += height / vertical_tics, j += 10) {
+    ctx.lineWidth = (i == height / vertical_tics * 5) ? 3 : 1;
+    ctx.beginPath();
+    ctx.moveTo(0, i);
+    ctx.lineTo(width, i);
+    ctx.stroke();
+    ctx.textBaseline = i == 0 ? "top" : "bottom";
+    ctx.fillText(80 - j + '%', width/2, i);
+}
+
+//draw graph
+let px, py;
+let i_start;
+ctx.strokeStyle = "#33F";
+ctx.lineWidth = 1;
+length = array.length;
+//array fits on screen
+if (length <= horizontal_points) { 
+    i_start = 0;
+    }
+// array is longer than screen
+else {
+    i_start =  length - horizontal_points;
+    }
+//draw lines from point to point
+for (let i = i_start; i < length; i ++) {
+    ctx.beginPath();
+    ctx.moveTo(px, py);
+    px = width - (length-1 - i) * horizontal_zoom;              //x's point value on canvas
+    py = height - (array[i] - vertical_offset) * vertical_zoom; //y's point value on canvas
+    ctx.lineTo(px, py);
+    ctx.stroke();
+}
+</script>
