@@ -61,7 +61,7 @@ https://stackoverflow.com/questions/43388716/the-correct-way-to-graph-of-a-funct
 | Plot einer math. Funktion         | Plot eines Arrays                                |
 | Statischer Plot                   | Dynamischer Plot, aktueller Wert am rechten Rand |
 
-# Dank
+## Dank
 Ich danke vor allem dem Autor "hobbyelektroniker" für seinen hervorragenden Kurs "Micropython mit ESP32". Der Kurs enthält Erklärungen und Lösungen auf vielen Gebieten. Eine (unvollständige) Aufzählung:
 - Einrichtung der Entwicklungsumgebung
 - Anzeige auf dem OLED-Display
