@@ -16,7 +16,7 @@ const width = 720,
       vertical_tics = 6;
 const horizontal_zoom = width / horizontal_points,
       vertical_zoom = height / vertical_points,
-      vertical_offset = -10;
+      vertical_offset = -10; // temperature at grid bottom
 const cvs = document.getElementById("cvs");
 cvs.width = width;
 cvs.height = height;
@@ -50,7 +50,7 @@ for (let i = 0, j = 0; i <= height; i += height / vertical_tics, j += 10) {
     ctx.lineTo(width, i);
     ctx.stroke();
     ctx.textBaseline = i == 0 ? "top" : "bottom";
-    ctx.fillText(50 - j + '°C', width/2, i);
+    ctx.fillText(vertical_offset + vertical_points - j + '°C', width/2, i);
 }
 
 //draw graph
