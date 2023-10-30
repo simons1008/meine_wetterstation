@@ -20,7 +20,7 @@ import urequests as requests
 # Einbinden in das eigene WLAN
 class WiFi:
     
-    zeitzone = 7200 # Sommerzeit
+    zeitzone = 3600 # Winterzeit
     
     def __init__(self):
         self.wlan = network.WLAN(network.STA_IF)
